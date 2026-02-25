@@ -35,7 +35,7 @@ def chat():
     user_message = data["message"]
 
     try:
-        response = giga.chat(messages=[{"role": "user", "content": user_message}])
+       response = giga.chat([{"role": "user", "content": user_message}])
         ai_message = response.choices[0].message.content
         return jsonify({"reply": ai_message})
     except Exception as e:
